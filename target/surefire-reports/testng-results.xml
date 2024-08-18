@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="4" failed="4" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-18T17:18:19 EEST" name="BDD Suite" finished-at="2024-08-18T17:18:31 EEST" duration-ms="12481">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-08-18T17:18:19 EEST" name="Login Tests" finished-at="2024-08-18T17:18:31 EEST" duration-ms="12481">
+      <class name="testRunner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:19 EEST" name="setUpClass" finished-at="2024-08-18T17:18:22 EEST" duration-ms="3489" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@278bb07e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:23 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:24 EEST" duration-ms="1624" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-1 Test Login Form with Empty Credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.util.UnknownFormatConversionException">
+            <message>
+              <![CDATA[Conversion = ''']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.util.UnknownFormatConversionException: Conversion = '''
+at java.base/java.util.Formatter.parse(Formatter.java:2750)
+at java.base/java.util.Formatter.format(Formatter.java:2671)
+at java.base/java.util.Formatter.format(Formatter.java:2625)
+at java.base/java.lang.String.format(String.java:4143)
+at org.assertj.core.util.Strings.formatIfArgs(Strings.java:86)
+at org.assertj.core.description.TextDescription.value(TextDescription.java:51)
+at org.assertj.core.error.DescriptionFormatter.format(DescriptionFormatter.java:47)
+at org.assertj.core.error.MessageFormatter.format(MessageFormatter.java:61)
+at org.assertj.core.error.ShouldBeEqual.smartErrorMessage(ShouldBeEqual.java:169)
+at org.assertj.core.error.ShouldBeEqual.newAssertionError(ShouldBeEqual.java:117)
+at org.assertj.core.internal.Failures.failure(Failures.java:105)
+at org.assertj.core.internal.Objects.assertEqual(Objects.java:220)
+at org.assertj.core.api.AbstractAssert.isEqualTo(AbstractAssert.java:369)
+at org.assertj.core.api.AbstractStringAssert.isEqualTo(AbstractStringAssert.java:416)
+at stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(LoginStepDefinitions.java:38)
+at ✽.I should see an error message 'Username is required'(file:///E:/sam/finalTask/src/test/resources/features/first.feature:10)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.UnknownFormatConversionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:24 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:25 EEST" duration-ms="512" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-1 Test Login Form with Empty Credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.util.UnknownFormatConversionException">
+            <message>
+              <![CDATA[Conversion = ''']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.util.UnknownFormatConversionException: Conversion = '''
+at java.base/java.util.Formatter.parse(Formatter.java:2750)
+at java.base/java.util.Formatter.format(Formatter.java:2671)
+at java.base/java.util.Formatter.format(Formatter.java:2625)
+at java.base/java.lang.String.format(String.java:4143)
+at org.assertj.core.util.Strings.formatIfArgs(Strings.java:86)
+at org.assertj.core.description.TextDescription.value(TextDescription.java:51)
+at org.assertj.core.error.DescriptionFormatter.format(DescriptionFormatter.java:47)
+at org.assertj.core.error.MessageFormatter.format(MessageFormatter.java:61)
+at org.assertj.core.error.ShouldBeEqual.smartErrorMessage(ShouldBeEqual.java:169)
+at org.assertj.core.error.ShouldBeEqual.newAssertionError(ShouldBeEqual.java:117)
+at org.assertj.core.internal.Failures.failure(Failures.java:105)
+at org.assertj.core.internal.Objects.assertEqual(Objects.java:220)
+at org.assertj.core.api.AbstractAssert.isEqualTo(AbstractAssert.java:369)
+at org.assertj.core.api.AbstractStringAssert.isEqualTo(AbstractStringAssert.java:416)
+at stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(LoginStepDefinitions.java:38)
+at ✽.I should see an error message 'Username is required'(file:///E:/sam/finalTask/src/test/resources/features/first.feature:10)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.UnknownFormatConversionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:25 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:25 EEST" duration-ms="380" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-2 Test Login Form with credentials by passing Username"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.util.UnknownFormatConversionException">
+            <message>
+              <![CDATA[Conversion = ''']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.util.UnknownFormatConversionException: Conversion = '''
+at java.base/java.util.Formatter.parse(Formatter.java:2750)
+at java.base/java.util.Formatter.format(Formatter.java:2671)
+at java.base/java.util.Formatter.format(Formatter.java:2625)
+at java.base/java.lang.String.format(String.java:4143)
+at org.assertj.core.util.Strings.formatIfArgs(Strings.java:86)
+at org.assertj.core.description.TextDescription.value(TextDescription.java:51)
+at org.assertj.core.error.DescriptionFormatter.format(DescriptionFormatter.java:47)
+at org.assertj.core.error.MessageFormatter.format(MessageFormatter.java:61)
+at org.assertj.core.error.ShouldBeEqual.smartErrorMessage(ShouldBeEqual.java:169)
+at org.assertj.core.error.ShouldBeEqual.newAssertionError(ShouldBeEqual.java:117)
+at org.assertj.core.internal.Failures.failure(Failures.java:105)
+at org.assertj.core.internal.Objects.assertEqual(Objects.java:220)
+at org.assertj.core.api.AbstractAssert.isEqualTo(AbstractAssert.java:369)
+at org.assertj.core.api.AbstractStringAssert.isEqualTo(AbstractStringAssert.java:416)
+at stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(LoginStepDefinitions.java:38)
+at ✽.I should see an error message 'Password is required'(file:///E:/sam/finalTask/src/test/resources/features/first.feature:23)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.UnknownFormatConversionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:25 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:25 EEST" duration-ms="356" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-2 Test Login Form with credentials by passing Username"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.util.UnknownFormatConversionException">
+            <message>
+              <![CDATA[Conversion = ''']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.util.UnknownFormatConversionException: Conversion = '''
+at java.base/java.util.Formatter.parse(Formatter.java:2750)
+at java.base/java.util.Formatter.format(Formatter.java:2671)
+at java.base/java.util.Formatter.format(Formatter.java:2625)
+at java.base/java.lang.String.format(String.java:4143)
+at org.assertj.core.util.Strings.formatIfArgs(Strings.java:86)
+at org.assertj.core.description.TextDescription.value(TextDescription.java:51)
+at org.assertj.core.error.DescriptionFormatter.format(DescriptionFormatter.java:47)
+at org.assertj.core.error.MessageFormatter.format(MessageFormatter.java:61)
+at org.assertj.core.error.ShouldBeEqual.smartErrorMessage(ShouldBeEqual.java:169)
+at org.assertj.core.error.ShouldBeEqual.newAssertionError(ShouldBeEqual.java:117)
+at org.assertj.core.internal.Failures.failure(Failures.java:105)
+at org.assertj.core.internal.Objects.assertEqual(Objects.java:220)
+at org.assertj.core.api.AbstractAssert.isEqualTo(AbstractAssert.java:369)
+at org.assertj.core.api.AbstractStringAssert.isEqualTo(AbstractStringAssert.java:416)
+at stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(LoginStepDefinitions.java:38)
+at ✽.I should see an error message 'Password is required'(file:///E:/sam/finalTask/src/test/resources/features/first.feature:23)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.UnknownFormatConversionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:25 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:26 EEST" duration-ms="232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-3: Test Login Form with Credentials by Passing Username & Password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:26 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:31 EEST" duration-ms="5226" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-3: Test Login Form with Credentials by Passing Username & Password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:31 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:31 EEST" duration-ms="196" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-3: Test Login Form with Credentials by Passing Username & Password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:31 EEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-08-18T17:18:31 EEST" duration-ms="188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["UC-3: Test Login Form with Credentials by Passing Username & Password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Form Validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@5c08c46a]" started-at="2024-08-18T17:18:31 EEST" name="tearDownClass" finished-at="2024-08-18T17:18:31 EEST" duration-ms="137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testRunner.TestRunner -->
+    </test> <!-- Login Tests -->
+  </suite> <!-- BDD Suite -->
+</testng-results>

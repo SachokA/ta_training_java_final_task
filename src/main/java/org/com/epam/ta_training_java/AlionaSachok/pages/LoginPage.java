@@ -4,9 +4,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage extends AbstractPage {
-
+    private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
     @FindBy(css = "#user-name")
     private WebElement userNameInput;
     @FindBy(css = "#password")
@@ -24,21 +26,27 @@ public class LoginPage extends AbstractPage {
     }
 
     public void fillUserNameInput(String name) {
+        logger.info("Filling input name {}",name);
         userNameInput.sendKeys(name);
     }
 
     public void cleaUserNameInput() {
+        logger.info("Click name input");
         userNameInput.click();
+        logger.info("Cleaning all");
         userNameInput.sendKeys(Keys.CONTROL + "a");
         userNameInput.sendKeys(Keys.DELETE);
     }
 
     public void fillUserPasswordInput(String password) {
+        logger.info("Filling input password {}",password);
         passwordInput.sendKeys(password);
     }
 
     public void clearPassword() {
+        logger.info("Click password input");
         passwordInput.click();
+        logger.info("Cleaning all");
         passwordInput.sendKeys(Keys.CONTROL + "a");
         passwordInput.sendKeys(Keys.DELETE);
     }
@@ -48,9 +56,9 @@ public class LoginPage extends AbstractPage {
     }
 
     public String getErrorMessage() {
+
         return errorMessage.getText();
     }
-
     public String getTitleLabel() {
         return titleLabel.getText();
     }

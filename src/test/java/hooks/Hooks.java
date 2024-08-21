@@ -18,7 +18,6 @@ public class Hooks {
     public static void setUp() {
         logger.info("Opening driver...");
         driver = DriverUtils.getDriver();
-
     }
 
     @After

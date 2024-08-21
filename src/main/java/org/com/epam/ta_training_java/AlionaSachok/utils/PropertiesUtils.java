@@ -3,39 +3,16 @@ package org.com.epam.ta_training_java.AlionaSachok.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
-
-enum ApplicationProperties {
-    BASE_URL("base.url"),
-    BROWSER_NAME("browser.name"),
-    USER_NAME("user.name"),
-    USER_PASSWORD("user.password");
-    private String propertyName;
-
-    private ApplicationProperties(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    @Override
-    public String toString() {
-        return propertyName;
-    }
-}
 
 public class PropertiesUtils {
     private static final Logger logger = LoggerFactory.getLogger(PropertiesUtils.class);
     public static final String ERROR_READ_PROPERTY = "Error, property not found";
-    //
     private static final String DEFAULT_FILENAME = "dev.properties";
-    private final String PATH_SEPARATOR = "/";
-    //
     private static volatile PropertiesUtils instance = null;
-    //
+
     private Properties appProps;
     private String filename;
 
@@ -61,21 +38,17 @@ public class PropertiesUtils {
 
     private void init() {
         appProps = new Properties();
-        String filePath = getFullPath();
-        loadProperties(filePath);
+        loadProperties();
     }
 
-    private String getFullPath() {
-        String path = this.getClass().getResource(PATH_SEPARATOR + filename).getPath();
-        return path;
-    }
-
-    private void loadProperties(String filePath) {
-        try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
-            appProps.load(fileInputStream);
-        } catch (Exception e) {
-            logger.error("ERROR Reading " + filePath + "  Message = " + e.getMessage());
-
+    private void loadProperties() {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filename)) {
+            if (inputStream == null) {
+                throw new IOException("Property file '" + filename + "' not found in the classpath");
+            }
+            appProps.load(inputStream);
+        } catch (IOException e) {
+            logger.error("ERROR Reading {}  Message = {}", filename, e.getMessage());
         }
     }
 
@@ -98,5 +71,4 @@ public class PropertiesUtils {
     public String readUserPassword() {
         return readProperty(ApplicationProperties.USER_PASSWORD.getPropertyName());
     }
-
 }

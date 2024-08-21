@@ -2,25 +2,24 @@ package org.com.epam.ta_training_java.AlionaSachok.driver;
 
 
 import org.apache.commons.io.FileUtils;
+import org.com.epam.ta_training_java.AlionaSachok.driver.factory.Browsers;
 import org.com.epam.ta_training_java.AlionaSachok.utils.PropertiesUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public final class DriverUtils {
+    private static final Logger logger = LoggerFactory.getLogger(DriverUtils.class);
     private static final String TIME_TEMPLATE = "yyyy-MM-dd_HH-mm-ss-S";
     private static Map<Long, WebDriver> drivers = new HashMap<>();
     private static Browsers defaultBrowser;
@@ -98,13 +97,20 @@ public final class DriverUtils {
             Files.createDirectories(destination.getParentFile().toPath());
             FileUtils.copyFile(scrFile, destination);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to create screenshot at: {}. Message: {}",
+                    destination.getPath() ,e.getMessage());
         }
     }
     public static void quit() {
+        logger.info("Closing driver");
         for (Map.Entry<Long, WebDriver> driverEntry : drivers.entrySet()) {
             if (driverEntry.getValue() != null) {
-                driverEntry.getValue().quit();
+                try {
+                    driverEntry.getValue().quit();
+                } catch (Exception e) {
+                    logger.error("Failed to quit WebDriver for thread ID: {}. Message: {}",
+                            driverEntry.getKey(), e.getMessage());
+                }
             }
         }
     }

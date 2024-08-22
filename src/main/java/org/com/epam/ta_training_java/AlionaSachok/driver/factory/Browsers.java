@@ -2,16 +2,16 @@ package org.com.epam.ta_training_java.AlionaSachok.driver.factory;
 
 import org.openqa.selenium.WebDriver;
     public enum Browsers {
-        DEFAULT_TEMPORARY(new ChromeTemporary()),
-        FIREFOX_TEMPORARY(new FirefoxTemporary()),
-        FIREFOX_WITHOUTUI(new FirefoxWithoutUI()),
-        CHROME_TEMPORARY(new ChromeTemporary()),
-        EDGE_TEMPORARY(new EdgeTemporary()),
-        CHROME_WITHOUTUI(new ChromeWithoutUI());
+        DEFAULT_TEMPORARY(new ChromeBrowser(false)),
+        FIREFOX_TEMPORARY(new FirefoxBrowser(false)),
+        FIREFOX_WITHOUTUI(new FirefoxBrowser(true)),
+        CHROME_TEMPORARY(new ChromeBrowser(false)),
+        EDGE_TEMPORARY(new EdgeBrowser(false)),
+        CHROME_WITHOUTUI(new ChromeBrowser(true));
 
-        private Browser browser;
+        private final BaseBrowser browser;
 
-        private Browsers(Browser browser) {
+        Browsers(BaseBrowser browser) {
             this.browser = browser;
         }
 

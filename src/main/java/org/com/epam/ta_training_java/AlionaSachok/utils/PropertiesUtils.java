@@ -47,16 +47,19 @@ public class PropertiesUtils {
                 throw new IOException("Property file '" + filename + "' not found in the classpath");
             }
             appProps.load(inputStream);
+            logger.debug("Properties have read successful");
         } catch (IOException e) {
             logger.error("ERROR Reading {}  Message = {}", filename, e.getMessage());
         }
     }
 
     public String readProperty(String propertyName) {
+        logger.debug("File property have read successful");
         return appProps.getProperty(propertyName, ERROR_READ_PROPERTY);
     }
 
     public String readBaseUrl() {
+        logger.debug("Url have read successful");
         return readProperty(ApplicationProperties.BASE_URL.getPropertyName());
     }
 

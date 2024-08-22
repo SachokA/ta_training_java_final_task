@@ -52,11 +52,12 @@ public class LoginPage extends AbstractPage {
     }
 
     public void clickLoginButton() {
+        logger.debug("Login button have hitter");
         submitButton.click();
     }
 
     public String getErrorMessage() {
-
+        logger.debug("Error message have received");
         return errorMessage.getText();
     }
     public String getTitleLabel() {
